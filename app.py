@@ -9,7 +9,7 @@ import pandas as pd
 tabtitle = 'DC Housing'
 myheading='Analysis of housing prices in Washington DC'
 neighborhood='Washington Highlands'
-color1='#04F9E6'
+color1='#00FF00'
 color2='#1B03B1'
 sourceurl = 'https://www.kaggle.com/christophercorrea/dc-residential-properties/'
 githublink = 'https://github.com/austinlasseter/dash-scatterplot-housing'
@@ -24,8 +24,8 @@ df=df[df['BEDRM']<8]
 
 ########### Set up the chart
 trace = go.Scatter(
-    x = df['PRICE'],
-    y = df['LIVING_GBA'],
+    y = df['PRICE'],
+    x = df['LIVING_GBA'],
     mode = 'markers',
     marker=dict(
         size=8,
@@ -39,8 +39,8 @@ trace = go.Scatter(
 data = [trace]
 layout = go.Layout(
     title = f'Larger homes cost more in {neighborhood}!', # Graph title
-    xaxis = dict(title = 'Sales Price'), # x-axis label
-    yaxis = dict(title = 'Square Feet'), # y-axis label
+    yaxis = dict(title = 'Sales Price'), # y-axis label
+    xaxis = dict(title = 'Square Feet'), # x-axis label
     hovermode ='closest' # handles multiple points landing on the same vertical
 )
 fig = go.Figure(data=data, layout=layout)
